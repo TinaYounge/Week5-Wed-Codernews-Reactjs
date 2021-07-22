@@ -1,9 +1,14 @@
 import React from "react";
+// import { Button, Card } from "react-bootstrap";
 import "./Style.css";
-const Content = () => {
+import EachCard from "../EachCard/Index";
+
+const Content = ({ news }) => {
   return (
     <>
-      <div className="box">content</div>
+      <div>
+        {news && news.map((el, idx) => <EachCard key={idx} news={el} />)}
+      </div>
     </>
   );
 };
