@@ -8,7 +8,7 @@ import {
   Button,
 } from "react-bootstrap";
 
-const NavbarPage = ({ setQuery }) => {
+const NavbarPage = ({ setQuery1 }) => {
   const [searchInput, setSearchInput] = useState("");
 
   const handleInput = (event) => {
@@ -17,7 +17,7 @@ const NavbarPage = ({ setQuery }) => {
   };
 
   const confirmSearch = () => {
-    setQuery(searchInput);
+    setQuery1(searchInput);
   };
   return (
     <>

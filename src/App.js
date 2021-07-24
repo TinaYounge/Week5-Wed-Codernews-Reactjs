@@ -10,8 +10,8 @@ const myKey = process.env.REACT_APP_KEY;
 
 const App = () => {
   const [query, setQuery] = useState("");
-  const [news, setNews] = useState("news");
-
+  const [news, setNews] = useState([]);
+  console.log("setQuery", setQuery);
   useEffect(() => {
     const getData = async () => {
       let url;
@@ -25,7 +25,6 @@ const App = () => {
       const { articles } = result;
       console.log("articles", articles);
       setNews(articles);
-      console.log("news[0]", news[0]);
     };
     getData();
   }, [query]);
@@ -35,9 +34,8 @@ const App = () => {
       <h1>
         <center>Coder new</center>
       </h1>
-      <NavbarPage setQuery={setQuery} />
-      <Content />
-      {/* <EachCard news={news[0]} /> */}
+      <NavbarPage setQuery1={setQuery} />
+      <Content news={news} />
       <Page />
     </>
   );
